@@ -1,0 +1,160 @@
+/* Pattern styles for the Finance Tracker application */
+
+.pattern-background {
+  position: relative;
+  overflow: hidden;
+}
+
+.pattern-background::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image: 
+    radial-gradient(circle at 25px 25px, rgba(0, 0, 0, 0.2) 2%, transparent 0%),
+    radial-gradient(circle at 75px 75px, rgba(0, 0, 0, 0.2) 2%, transparent 0%);
+  background-size: 100px 100px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.pattern-light {
+  position: relative;
+  overflow: hidden;
+}
+
+.pattern-light::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.05;
+  background-image: 
+    linear-gradient(30deg, rgba(100, 100, 100, 0.1) 12%, transparent 12.5%, transparent 87.5%, rgba(100, 100, 100, 0.1) 87.5%, rgba(100, 100, 100, 0.1)),
+    linear-gradient(150deg, rgba(100, 100, 100, 0.1) 12%, transparent 12.5%, transparent 87.5%, rgba(100, 100, 100, 0.1) 87.5%, rgba(100, 100, 100, 0.1)),
+    linear-gradient(30deg, rgba(100, 100, 100, 0.1) 12%, transparent 12.5%, transparent 87.5%, rgba(100, 100, 100, 0.1) 87.5%, rgba(100, 100, 100, 0.1)),
+    linear-gradient(150deg, rgba(100, 100, 100, 0.1) 12%, transparent 12.5%, transparent 87.5%, rgba(100, 100, 100, 0.1) 87.5%, rgba(100, 100, 100, 0.1));
+  background-size: 80px 140px;
+  background-position: 0 0, 0 0, 40px 70px, 40px 70px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.pattern-blue {
+  position: relative;
+  overflow: hidden;
+}
+
+.pattern-blue::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.05;
+  background-image: 
+    linear-gradient(0deg, transparent 9px, rgba(66, 153, 225, 0.8) 10px),
+    linear-gradient(90deg, transparent 9px, rgba(66, 153, 225, 0.8) 10px);
+  background-size: 10px 10px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.pattern-green {
+  position: relative;
+  overflow: hidden;
+}
+
+.pattern-green::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.05;
+  background-color: transparent;
+  background-image:
+    radial-gradient(rgba(72, 187, 120, 0.8) 2px, transparent 2px);
+  background-size: 30px 30px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.pattern-red {
+  position: relative;
+  overflow: hidden;
+}
+
+.pattern-red::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.05;
+  background-color: transparent;
+  background-image:
+    linear-gradient(45deg, rgba(245, 101, 101, 0.8) 25%, transparent 25%, transparent 75%, rgba(245, 101, 101, 0.8) 75%, rgba(245, 101, 101, 0.8)),
+    linear-gradient(-45deg, rgba(245, 101, 101, 0.8) 25%, transparent 25%, transparent 75%, rgba(245, 101, 101, 0.8) 75%, rgba(245, 101, 101, 0.8));
+  background-size: 20px 20px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Add responsive content positioning to override z-index */
+.content-layer {
+  position: relative;
+  z-index: 1;
+}
+
+/* Add a new pattern for the dashboard summary section */
+.pattern-dots {
+  position: relative;
+  overflow: hidden;
+}
+
+.pattern-dots::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.05;
+  background-image:
+    radial-gradient(circle at 10px 10px, rgba(66, 153, 225, 0.8) 2px, transparent 0);
+  background-size: 20px 20px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Add a striped pattern for statistics */
+.pattern-stripe {
+  position: relative;
+  overflow: hidden;
+}
+
+.pattern-stripe::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image:
+    linear-gradient(45deg, rgba(66, 153, 225, 0.6) 25%, transparent 25%, transparent 50%, 
+    rgba(66, 153, 225, 0.6) 50%, rgba(66, 153, 225, 0.6) 75%, transparent 75%, transparent);
+  background-size: 8px 8px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Add a geometric pattern */
+.pattern-geometric {
+  position: relative;
+  overflow: hidden;
+}
+
+.pattern-geometric::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image:
+    linear-gradient(30deg, #ccc 12%, transparent 12.5%, transparent 87%, #ccc 87.5%, #ccc),
+    linear-gradient(150deg, #ccc 12%, transparent 12.5%, transparent 87%, #ccc 87.5%, #ccc),
+    linear-gradient(30deg, #ccc 12%, transparent 12.5%, transparent 87%, #ccc 87.5%, #ccc),
+    linear-gradient(150deg, #ccc 12%, transparent 12.5%, transparent 87%, #ccc 87.5%, #ccc);
+  background-size: 32px 56px;
+  background-position: 0 0, 0 0, 16px 28px, 16px 28px;
+  pointer-events: none;
+  z-index: 0;
+}
