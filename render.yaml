@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: finance-tracker
+    buildCommand: npm run build
+    staticPublishPath: ./build # or ./dist depending on your build output
+    headers:
+      - path: /*
+        name: Content-Type
+        value: text/css
+        pathPattern: \.css$
