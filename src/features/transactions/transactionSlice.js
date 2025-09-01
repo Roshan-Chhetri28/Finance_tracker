@@ -72,7 +72,7 @@ export const fetchTransactions = () => async (dispatch) => {
 export const addTransaction = (transactionData) => async (dispatch) => {
     dispatch(setLoading(true));
     try {
-        await axios.post(`${address}/api/transaction`, transactionData);
+        await axios.post(`${address}/api/transactions`, transactionData);
         // After adding a transaction, fetch all transactions to update the state
         await dispatch(fetchTransactions());
         return { success: true };
@@ -89,7 +89,7 @@ export const addTransaction = (transactionData) => async (dispatch) => {
 export const editTransaction = (id, transactionData) => async (dispatch) => {
     dispatch(setLoading(true));
     try {
-        await axios.put(`${address}/api/transaction/${id}`, transactionData);
+        await axios.put(`${address}/api/transactions/${id}`, transactionData);
         // After editing, fetch all transactions to update the state
         await dispatch(fetchTransactions());
         return { success: true };
@@ -106,7 +106,7 @@ export const editTransaction = (id, transactionData) => async (dispatch) => {
 export const deleteTransaction = (id) => async (dispatch) => {
     dispatch(setLoading(true));
     try {
-        await axios.delete(`${address}/api/transaction/${id}`);
+        await axios.delete(`${address}/api/transactions/${id}`);
         // After deleting, fetch all transactions to update the state
         await dispatch(fetchTransactions());
         return { success: true };
