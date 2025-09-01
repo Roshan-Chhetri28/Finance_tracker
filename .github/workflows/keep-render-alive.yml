@@ -1,0 +1,57 @@
+name: Keep Render Alive
+
+on:
+  # Runs every 10 minutes (cron is in UTC)
+  schedule:
+    - cron: "*/10 * * * *"
+  # Let you run it manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      # Set this in your repo → Settings → Secrets and variables → Actions → Secrets
+      # Example: https://your-app.onrender.com/health
+      PING_URLS: ${{ secrets.RENDER_PING_URLS }}
+      # Optional: comma-separated paths if you want to hit multiple endpoints per service
+      # Example: "/,/health,/api/status"
+      PING_PATHS: ${{ vars.RENDER_PING_PATHS }}
+
+    steps:
+      - name: Validate inputs
+        run: |
+          if [ -z "${PING_URLS}" ]; then
+            echo "::error::Missing RENDER_PING_URLS secret (comma-separated URLs)."
+            exit 1
+          fi
+          echo "Using URLs: ${PING_URLS}"
+
+      - name: Ping URLs
+        shell: bash
+        run: |
+          IFS=',' read -ra URLS <<< "$PING_URLS"
+          IFS=',' read -ra PATHS <<< "${PING_PATHS:-/}"
+
+          STATUS=0
+
+          for base in "${URLS[@]}"; do
+            base=$(echo "$base" | xargs) # trim
+            for path in "${PATHS[@]}"; do
+              url="${base}$(echo "$path" | sed 's|^/||' | awk '{print "/"$0}')"
+
+              echo "Pinging: ${url}"
+
+              # -f fail on >= 400; --max-time to avoid hanging; retry with backoff
+              if ! curl -fsS --retry 3 --retry-delay 5 --max-time 20 "$url" > /dev/null; then
+                echo "::warning::Failed to ping ${url}"
+                STATUS=1
+              else
+                echo "OK: ${url}"
+              fi
+            done
+          done
+
+          # Don’t fail the whole workflow if one ping fails; comment next line to be strict
+          exit 0
