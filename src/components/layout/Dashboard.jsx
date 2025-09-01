@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { address } from "../../api/axiosConfig";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus, faChartPie, faCalendarAlt } from "@fortawesome/free-solid-svg-icons";
+import { faPlus, faCalendarAlt } from "@fortawesome/free-solid-svg-icons";
 import { fetchTransactions, addTransaction } from "../../features/transactions/transactionSlice";
-import { Pie, Doughnut, Bar } from "react-chartjs-2";
+import { Doughnut, Bar } from "react-chartjs-2";
 import {
   Chart as ChartJS,
   ArcElement,
