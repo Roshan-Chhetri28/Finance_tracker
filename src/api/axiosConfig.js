@@ -1,1 +1,1 @@
-export const address = `http://localhost:8080`
+export const address = `https://finance-tracker-backend-five.vercel.app/api/`
