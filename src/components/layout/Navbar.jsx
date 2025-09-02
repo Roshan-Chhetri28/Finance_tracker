@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import './Advisor.css'
 
 const Navbar = () => {
   return (
@@ -29,6 +30,16 @@ const Navbar = () => {
                 <path d="M19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3ZM19 19H5V5H19V19ZM7 10H9V17H7V10ZM11 7H13V17H11V7ZM15 13H17V17H15V13Z" fill="currentColor" />
               </svg>
               Transactions
+            </Link>
+            <Link
+              to="/advisor"
+              className="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md hover:bg-purple-100 transition-colors flex items-center"
+            >
+              <svg className="w-4 h-4 mr-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="10" fill="#a78bfa" />
+                <path d="M12 7C10.34 7 9 8.34 9 10C9 11.66 10.34 13 12 13C13.66 13 15 11.66 15 10C15 8.34 13.66 7 12 7ZM12 15C9.33 15 6 16.34 6 19V20H18V19C18 16.34 14.67 15 12 15Z" fill="#fff"/>
+              </svg>
+              Advisor
             </Link>
           </div>
         </div>

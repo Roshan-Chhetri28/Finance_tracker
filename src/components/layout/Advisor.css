@@ -1,0 +1,63 @@
+/* Geometric background for Advisor chat */
+.advisor-bg {
+  background: repeating-linear-gradient(135deg, #e0e7ff 0 20px, #fff 20px 40px), repeating-linear-gradient(225deg, #f0fdfa 0 20px, #fff 20px 40px);
+  background-blend-mode: multiply;
+}
+
+.advisor-chatbox {
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+  border: 1px solid rgba(255,255,255,0.18);
+}
+
+.advisor-messages::-webkit-scrollbar {
+  width: 6px;
+  background: #e0e7ff;
+}
+.advisor-messages::-webkit-scrollbar-thumb {
+  background: #a5b4fc;
+  border-radius: 3px;
+}
+
+/* Markdown styling */
+.markdown-content {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.markdown-content p {
+  margin-bottom: 0.75rem;
+}
+
+.markdown-content p:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-content code {
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 0.1rem 0.2rem;
+  border-radius: 3px;
+  font-family: monospace;
+}
+
+.markdown-content pre {
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 0.5rem;
+  border-radius: 4px;
+  overflow-x: auto;
+  margin-bottom: 0.75rem;
+}
+
+.markdown-content h1, .markdown-content h2, .markdown-content h3, .markdown-content h4 {
+  font-weight: 600;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.markdown-content ul, .markdown-content ol {
+  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.markdown-content li {
+  margin-bottom: 0.25rem;
+}
