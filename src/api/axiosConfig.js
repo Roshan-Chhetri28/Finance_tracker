@@ -1,1 +1,1 @@
-export const address = `https://finance-tracker-backend-five.vercel.app`
+export const address = import.meta.env.VITE_ADDRESS
