@@ -62,12 +62,6 @@ const Advisor = () => {
       // Handle various response formats - looking for message in the format we know from history
       let botResponse = 'Sorry, I did not understand that.';
       if (data && data.success && data.reply) {
-        botResponse = data.reply;
-      } else if (data && data.message) {
-        botResponse = data.message;
-      } else if (data && data.reply) {
-        botResponse = data.reply;
-      } else if (data && data.advice) {
         botResponse = data.advice;
       }
       
